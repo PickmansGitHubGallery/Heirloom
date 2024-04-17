@@ -26,7 +26,39 @@ $collection->insertOne([
     'dSted' => $dSted
 ]);
 }
+function opretBruger($username,$password,$email){
+    $client = new MongoDB\Client('mongodb://localhost:27017');
+    $collection = $client->heirloom->brugerInfo;
+    $collection->insertOne([
+        'username' => $username,
+        'password' => $password,
+        'email' => $email
+    ]);
+}
+function findBruger($username){
+    $client = new MongoDB\Client('mongodb://localhost:27017');
+    $collection = $client->heirloom->brugerInfo;
+    $cursor = $collection->find(['username' => $username]);
+    foreach ($cursor as $document) {
+        $bruger = $document['username'];
+        return $bruger;
+    }
+}
 
+function tjekBruger($username,$password){
+    $client = new MongoDB\Client('mongodb://localhost:27017');
+    $collection = $client->heirloom->brugerInfo;
+    
+    $cursor = $collection->find(['username' => $username]);
+    foreach ($cursor as $document) {
+        $hash = $document['password'];
+        if (password_verify($password, $hash)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
 
 function selectFromDatabase(){
     $client = new MongoDB\Client('mongodb://localhost:27017');

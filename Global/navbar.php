@@ -5,7 +5,7 @@
         <ul class="nav-links">
             <li><a href="UI/opretPersonSide.php">Opret Person</a></li>
             <li><a href="visPerson.php">Find Person</a></li>
-            <li><a href="#">Services</a></li>
+            <li><a href="#">Opret</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </div>
