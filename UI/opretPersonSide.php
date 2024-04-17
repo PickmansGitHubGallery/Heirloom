@@ -1,13 +1,14 @@
 <?php
-include 'header.php';
-include 'navbar.php';
+include '../Global/header.php';
+include '../Global/navbar.php';
+include '../Global/footer.php';
 ?>
 
 <html>
 <body>
-    <h2>Indtast dine oplysninger:</h2>
+<section class="opretPersonForm">
+    <h2 id="opretPersonFormOverskrift">Indtast dine oplysninger:</h2>
     <form action="opretPersonLogik.php" method="POST">
-
         <label for="fornavn">Fornavn*:</label>
         <input type="text" id="fornavn" name="fornavn" required><br><br>
 
@@ -15,11 +16,11 @@ include 'navbar.php';
         <input type="text" id="efterNavn" name="efterNavn" required><br><br>
 
         <label for="køn">Køn:</label>
-                <select id="køn" name="køn" >
-                    <option value="mand">Mand</option>
-                    <option value="kvinde">Kvinde</option>
-                    <option value="anden">Andet</option>
-                </select><br><br>
+        <select id="køn" name="køn" >
+            <option value="mand">Mand</option>
+            <option value="kvinde">Kvinde</option>
+            <option value="anden">Andet</option>
+        </select><br><br>
 
         <label for="fDag">Fødselsdag:</label>
         <input type="date" id="fDag" name="fDag" ><br><br>
@@ -37,6 +38,7 @@ include 'navbar.php';
 
         <p>* Skal udfyldes.</p>
     </form>
+</section>
 </body>
 </html>
 

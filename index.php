@@ -13,6 +13,6 @@ include 'navbar.php';
 <body>
   <p>Velkommen til Heirloom</p>
   <br>
-  <a href="/Heirloom/opretPersonSide.php">Link to opretPerson.php</a>
+  <a href="/Heirloom/UI/opretPersonSide.php">Link to opretPerson.php</a>
 </body>
 </html>
