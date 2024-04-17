@@ -18,7 +18,7 @@ include 'navbar.php';
   $id = $_POST["person_id"];
 
   // Get person information for the entered ID
-  $person = visPersonMedId($id, $conn);
+   /* $person = visPersonMedId($id, $conn);
 
   // Check if person data is retrieved
   if ($person instanceof Person) {
@@ -39,7 +39,7 @@ include 'navbar.php';
   } else {
       echo "No data found for ID: $id";
   }
-
+*/
 }
 ?>
 </body>

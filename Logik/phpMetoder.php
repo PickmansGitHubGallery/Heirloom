@@ -4,10 +4,11 @@ include 'personKlasse.php';
 
 
 //Denne funktion viser en person ud fra et ID
+/*
 function visPersonMedId($id,$conn){
 
 $person = new Person("","",0,"","","","",0,"");
-$result = selectPersonFromDatabase($id, $conn);
+result = selectPersonFromDatabase($id, $conn);
 if ($result->num_rows > 0) {
     // Fetch the data and display it
     $row = $result->fetch_assoc();
@@ -31,7 +32,7 @@ if ($result->num_rows > 0) {
     echo "No data found for ID: $id";
 }
 }
-
+*/
 
 function findAlder() {
   $birthDateStr = $_POST['fDag'];

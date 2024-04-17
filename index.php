@@ -1,15 +1,8 @@
 <?php
-include 'header.php';
-include 'navbar.php';
+include 'Global/header.php';
+include 'Global/navbar.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+<html>
 <body>
   <p>Velkommen til Heirloom</p>
   <br>

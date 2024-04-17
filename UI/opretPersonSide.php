@@ -8,7 +8,7 @@ include '../Global/footer.php';
 <body>
 <section class="opretPersonForm">
     <h2 id="opretPersonFormOverskrift">Indtast dine oplysninger:</h2>
-    <form action="opretPersonLogik.php" method="POST">
+    <form action="../Logik/opretPersonLogik.php" method="POST">
         <label for="fornavn">Fornavn*:</label>
         <input type="text" id="fornavn" name="fornavn" required><br><br>
 
