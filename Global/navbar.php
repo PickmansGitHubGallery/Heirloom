@@ -8,6 +8,9 @@
             <li><a href="../UI/logindSide.php">Login</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="logout-form">
+    <button type="submit" name="logout" class="logout-btn">Log Off</button>
+  </form>
     </div>
 </nav>
 </html>

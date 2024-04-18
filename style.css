@@ -148,3 +148,11 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
   background-color: #444;
 }
+.VelkomstSide {
+  text-align: center;
+}
+
+.VelkomstSide .center-content {
+  display: inline-block;
+  text-align: center;
+}

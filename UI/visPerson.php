@@ -1,4 +1,5 @@
 <?php
+include '../Global/session.php';
 include '../Global/header.php';
 include '../Global/navbar.php';
 include '../Global/footer.php';

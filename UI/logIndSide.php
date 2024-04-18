@@ -1,5 +1,4 @@
 <?php
-
 include '../Global/header.php';
 include '../Global/navbar.php';
 include '../Global/footer.php';
@@ -8,7 +7,7 @@ include '../Global/footer.php';
 
 <html>
 <body>
-  <form action="../Logik/logindLogik.php" method="post">
+  <form action="../Logik/logindLogik.php" method="POST">
     <label for="uname">Brugernavn:</label>
     <input name="username" id="uname" type="text"></input>
     <br><br>
