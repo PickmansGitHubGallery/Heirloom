@@ -5,7 +5,8 @@ function insertOneToDatabase($person){
 //Forbindelse til databasen
 $client = new MongoDB\Client('mongodb://localhost:27017');
 //Hvilken databasen jeg vil bruge.
-$collection = $client->heirloom->personer;
+$user = $_SESSION['username'];
+$collection = $client->heirloom->$user;
 
 $id = $person->getId();
 $fornavn = $person->getForNavn();
@@ -79,7 +80,6 @@ function addToIdCounter($username){
 function tjekBruger($username,$password){
     $client = new MongoDB\Client('mongodb://localhost:27017');
     $collection = $client->heirloom->brugerInfo;
-    
     $cursor = $collection->find(['username' => $username]);
     foreach ($cursor as $document) {
         $hash = $document['password'];
@@ -91,21 +91,13 @@ function tjekBruger($username,$password){
     }
 }
 
-function selectFromDatabase(){
+function findPerson($username,$id){
     $client = new MongoDB\Client('mongodb://localhost:27017');
-    $collection = $client->users->userinfo;
-    $cursor = $collection->find(['name' => 'Jakob'], ['projection' => ['name' => 1,'username' => 1, 'email' => 1]]);
+    $collection = $client->heirloom->$username;
+    $cursor = $collection->find(['id' => $id]);
     foreach ($cursor as $document) {
-        echo "Name: " . $document['name'] . ", Username: " . $document['username'] . ", Email: " . $document['email'] . "\n";
-    }
-}
-
-function selecetFromId($id){
-    $client = new MongoDB\Client('mongodb://localhost:27017');
-    $collection = $client->users->userinfo;
-    $cursor = $collection->find(['id' => $id], ['projection' => ['fornavn' => 1, 'efternavn' => 1, 'køn' => 1, 'fdag' => 1, 'fSted' => 1, 'dDag', 'dSted' => 1], ]);
-    foreach ($cursor as $document) {
-        echo "Fornavn: " . $document['fornavn'] . ", Efternavn: " . $document['efternavn'] . ", Køn: " . $document['køn'] . " \n";
+        $person = $document;
+        return $person;
     }
 }
 ?>

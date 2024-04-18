@@ -8,6 +8,7 @@ include 'Global/session.php';
 echo $bruger;
 */
 
-echo findIdCounter('Kongen');
-echo $_SESSION['username'];
+$person = findPerson('Queen','0');
+echo $person['fornavn'];
+echo $person['efternavn'];
 ?>
