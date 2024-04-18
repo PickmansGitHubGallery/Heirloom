@@ -1,4 +1,5 @@
 <?php
+include '../Global/session.php';
 include '../Logik/personKlasse.php';
 include '../mongodb.php';
 include '../global/header.php';
@@ -14,11 +15,16 @@ function changeDateFormatToDMY($date) {
 $fdag = changeDateFormatToDMY($_POST['fDag']);
 $ddag = changeDateFormatToDMY($_POST['dDag']);
 
+$username = $_SESSION['username'];
+$personId = findIdCounter($username);
+
+
 //Her opretter jeg en ny person og indsætter den i databasen.
-$person = new Person ($_POST['fornavn'], $_POST['efterNavn'], $fdag,$_POST['fSted'], $_POST['køn'], $ddag, $_POST['dSted']);
+$person = new Person ($personId,$_POST['fornavn'], $_POST['efterNavn'], $fdag,$_POST['fSted'], $_POST['køn'], $ddag, $_POST['dSted']);
 
 
 insertOneToDatabase($person);
+addToIdCounter($username);
 
 echo "Personen er nu oprettet i databasen.";
 echo "<br>";

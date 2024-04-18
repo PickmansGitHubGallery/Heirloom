@@ -24,7 +24,7 @@ include 'Global/session.php';
 </nav>
 <section class="VelkomstSide">
   <div class="center-content">
-    <p>Velkommen til Heirloom</p>
+    <p>Velkommen til Heirloom, <?php echo $_SESSION['username'] ?></p>
     <img src="public/images/tree.jpg" alt="tree" width="750" height="750">
   </div>
 </section>

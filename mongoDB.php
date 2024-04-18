@@ -7,6 +7,7 @@ $client = new MongoDB\Client('mongodb://localhost:27017');
 //Hvilken databasen jeg vil bruge.
 $collection = $client->heirloom->personer;
 
+$id = $person->getId();
 $fornavn = $person->getForNavn();
 $efternavn = $person->getEfterNavn();
 $køn = $person->getKøn();
@@ -17,6 +18,7 @@ $dDag = $person->getDDag();
 $dSted = $person->getdSted();
 
 $collection->insertOne([
+    'id' => $id,
     'fornavn' => $fornavn,
     'efternavn' => $efternavn,
     'køn' => $køn,
@@ -32,7 +34,8 @@ function opretBruger($username,$password,$email){
     $collection->insertOne([
         'username' => $username,
         'password' => $password,
-        'email' => $email
+        'email' => $email,
+        'idCounter' => '0'
     ]);
 }
 function findBruger($username){
@@ -43,6 +46,34 @@ function findBruger($username){
         $bruger = $document['username'];
         return $bruger;
     }
+}
+function insertIdCount($counter){
+    $client = new MongoDB\Client('mongodb://localhost:27017');
+    $collection = $client->heirloom->brugerInfo;
+    $collection->insertOne([
+        'idCounter' => $counter
+    ]);
+}
+function findIdCounter($username){
+    $client = new MongoDB\Client('mongodb://localhost:27017');
+    $collection = $client->heirloom->brugerInfo;
+    $cursor = $collection->find(['username' => $username]);
+    foreach ($cursor as $document) {
+        $counter = $document['idCounter'];
+            return $counter;
+        }
+}
+
+function addToIdCounter($username){
+    $client = new MongoDB\Client('mongodb://localhost:27017');
+    $collection = $client->heirloom->brugerInfo;
+    $bruger = findBruger($username);
+    $counter = findIdCounter($bruger);
+    $counter = $counter + 1;
+    $collection->updateOne(
+        ['username' => $bruger],
+        ['$set' => ['idCounter' => $counter]]
+    );
 }
 
 function tjekBruger($username,$password){

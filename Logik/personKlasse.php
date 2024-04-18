@@ -14,7 +14,8 @@ class Person{
   private $dSted;
 
   // Constructor
-  function __construct($forNavn, $efterNavn, $fDag, $fSted, $køn, $dDag, $dSted) {
+  function __construct($id,$forNavn, $efterNavn, $fDag, $fSted, $køn, $dDag, $dSted) {
+    $this->id = $id;
     $this->forNavn = $forNavn;
     $this->efterNavn = $efterNavn;
     //$this->alder = $alder;
@@ -23,6 +24,7 @@ class Person{
     $this->køn = $køn;
     $this->dDag = $dDag;
     $this->dSted = $dSted;
+  
   }
 
   // Methods
