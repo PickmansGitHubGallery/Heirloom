@@ -1,7 +1,7 @@
 <?php
-include 'phpMetoder.php';
-include 'header.php';
-include 'navbar.php';
+include '../Global/header.php';
+include '../Global/navbar.php';
+include '../Global/footer.php';
 ?>
 
 <html>
