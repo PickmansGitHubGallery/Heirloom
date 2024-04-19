@@ -6,7 +6,7 @@
             <li><a href="../UI/opretPersonSide.php">Opret Person</a></li>
             <li><a href="../UI/opretBrugerSide.php">Opret Bruger</a></li>
             <li><a href="../UI/logindSide.php">Login</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="../UI/visPerson.php">Vis Person</a></li>
         </ul>
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="logout-form">
     <button type="submit" name="logout" class="logout-btn">Log Off</button>

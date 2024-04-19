@@ -19,12 +19,19 @@ include 'Global/session.php';
             <li><a href="UI/logindSide.php">Login</a></li>
             <li><a href="UI/opretBrugerSide.php">Opret Bruger</a></li>
             <li><a href="UI/opretPersonSide.php">Opret Person</a></li>
+            <li><a href="UI/visPerson.php">Vis Person</a></li>
         </ul>
     </div>
 </nav>
 <section class="VelkomstSide">
   <div class="center-content">
-    <p>Velkommen til Heirloom, <?php echo $_SESSION['username'] ?></p>
+    <p>Velkommen til Heirloom, <?php
+    if (isset($_SESSION['username'])){
+      echo $_SESSION['username'];
+    }else{
+      echo 'Gæst';
+    } 
+     ?></p>
     <img src="public/images/tree.jpg" alt="tree" width="750" height="750">
   </div>
 </section>

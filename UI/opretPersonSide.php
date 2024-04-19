@@ -18,20 +18,16 @@ include '../Global/footer.php';
         <input type="text" id="efterNavn" name="efterNavn" required><br><br>
 
         <label for="køn">Køn:</label>
-        <select id="køn" name="køn" >
-            <option value="mand">Mand</option>
-            <option value="kvinde">Kvinde</option>
-            <option value="anden">Andet</option>
-        </select><br><br>
+        <input type="text" id="køn" name="køn">
 
         <label for="fDag">Fødselsdag:</label>
-        <input type="date" id="fDag" name="fDag" ><br><br>
+        <input type="text" id="fDag" name="fDag" placeholder="dd/mm/åååå" ><br><br>
 
         <label for="fSted">Fødselssted:</label>
         <input type="text" id="fSted" name="fSted" ><br><br>
         
         <label for="dDag">Dødsdag:</label>
-        <input type="date" id="dDag" name="dDag"><br><br>
+        <input type="text" id="dDag" name="dDag" placeholder="dd/mm/åååå" ><br><br>
 
         <label for="dSted">Dødssted:</label>
         <input type="text" id="dSted" name="dSted"><br><br>

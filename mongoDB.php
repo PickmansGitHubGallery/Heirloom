@@ -91,13 +91,26 @@ function tjekBruger($username,$password){
     }
 }
 
-function findPerson($username,$id){
+function findPersonMedId($username,$personId){
     $client = new MongoDB\Client('mongodb://localhost:27017');
     $collection = $client->heirloom->$username;
-    $cursor = $collection->find(['id' => $id]);
-    foreach ($cursor as $document) {
-        $person = $document;
-        return $person;
-    }
+    $cursor = $collection->find(['id' => $personId]);
+    $records = iterator_to_array($cursor);
+    return $records;
+}
+
+function updatePerson($personId,$username,$fornavn,$efternavn,$fDag,$fSted,$køn,$dDag,$dSted){
+    $client = new MongoDB\Client('mongodb://localhost:27017');
+    $collection = $client->heirloom->$username;
+    $collection->updateOne(
+        ['id' => $personId],
+        ['$set' => ['fornavn' => $fornavn]],
+        ['$set' => ['efternavn' => $efternavn]],
+        ['$set' => ['fDag' => $fDag]],
+        ['$set' => ['fSted' => $fSted]],
+        ['$set' => ['køn' => $køn]],
+        ['$set' => ['dDag' => $dDag]],
+        ['$set' => ['dSted' => $dSted]]
+    );
 }
 ?>
