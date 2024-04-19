@@ -114,4 +114,9 @@ function updatePerson($personId,$username,$fornavn,$efternavn,$fDag,$fSted,$køn
         ['$set' => ['dSted' => $dSted]]
     );
 }
+function deletePerson($username,$personId){
+    $client = new MongoDB\Client('mongodb://localhost:27017');
+    $collection = $client->heirloom->$username;
+    $collection->deleteOne(['id' => $personId]);
+}
 ?>

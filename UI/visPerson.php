@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_SESSION['username'];
     $personRetur = findPersonMedId($username,(int)$id);
     if (empty($personRetur)) {
-        echo "Personen blev ikke fundet.";
+        echo '<div class="fejlPerson">Personen blev ikke fundet.</div>';
     }
     foreach($personRetur as $data) {
 ?>

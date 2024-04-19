@@ -156,3 +156,7 @@ form input[type="submit"]:hover {
   display: inline-block;
   text-align: center;
 }
+.fjernPerson {
+  text-align: center;
+  color: red;
+}
