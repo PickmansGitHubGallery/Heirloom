@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
+include_once 'Logik/personKlasse.php';
 
 function insertOneToDatabase($person){
 //Forbindelse til databasen
@@ -91,13 +92,13 @@ function tjekBruger($username,$password){
     }
 }
 
-function findPersonMedId($username,$personId){
+function findPersonMedId($username, $personId){
     $client = new MongoDB\Client('mongodb://localhost:27017');
     $collection = $client->heirloom->$username;
     $cursor = $collection->find(['id' => $personId]);
-    $records = iterator_to_array($cursor);
-    return $records;
+    return $cursor->toArray(); // Fetching results from the cursor and returning as an array
 }
+
 
 function updatePerson($personId,$username,$fornavn,$efternavn,$fDag,$fSted,$køn,$dDag,$dSted){
     $client = new MongoDB\Client('mongodb://localhost:27017');

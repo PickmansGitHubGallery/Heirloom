@@ -8,7 +8,15 @@ include 'Global/session.php';
 echo $bruger;
 */
 
-$person = findPerson('Queen','0');
-echo $person['fornavn'];
-echo $person['efternavn'];
+$person = findPersonMedId('Queen',4);
+foreach ($person as $data) {
+    echo $data['fornavn'];
+    echo $data['efternavn'];
+    echo $data['fDag'];
+    echo $data['fSted'];
+    echo $data['køn'];
+    echo $data['dDag'];
+    echo $data['dSted'];
+}
+
 ?>

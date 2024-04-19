@@ -20,7 +20,10 @@ include '../mongodb.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["person_id"];
     $username = $_SESSION['username'];
-    $personRetur = findPersonMedId($username,$personRetur); // Assuming this function retrieves person information based on the username
+    $personRetur = findPersonMedId($username,(int)$id);
+    if (empty($personRetur)) {
+        echo "Personen blev ikke fundet.";
+    }
     foreach($personRetur as $data) {
 ?>
 <form method="POST">
@@ -42,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" id="fSted" name="fSted" value="<?php echo $data['fSted']; ?>">
         
         <label for="dDag">Dødsdag:</label>
-        <input type="text" id="dDag" name="dDag" placeholder="dd/mm/åååå" value="<?php echo $data['fDag']; ?>" >
+        <input type="text" id="dDag" name="dDag" placeholder="dd/mm/åååå" value="<?php echo $data['dDag']; ?>" >
 
         <label for="dSted">Dødssted:</label>
         <input type="text" id="dSted" name="dSted" value="<?php echo $data['dSted']; ?>">
