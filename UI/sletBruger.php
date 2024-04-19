@@ -9,7 +9,7 @@ include '../mongodb.php';
 
 <html>
 <body>
-<h1>Opdater Person information</h1>
+<h1>Slet Person</h1>
 
 <form method="POST">Indtast Persons ID:</label>
     <input type="text" id="person_id" name="person_id">
@@ -51,45 +51,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <label for="dSted">Dødssted:</label>
         <input type="text" id="dSted" name="dSted" value="<?php echo $data['dSted']; ?>">
-
-        <input type="submit" name="update" value="Update">
         <input type="submit" name="delete" value="Delete">
 </form>
 <?php
     }
-}
-    // Handle form submission for delete
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete"])) {
-    $id = $_POST["person_id"];
-    $username = $_SESSION['username'];
-    
-    // Delete the person
-    $deletedCount = deletePerson($username, (int)$id);
-    /*
-    // Check if the person was successfully deleted
-    if ($deletedCount > 0) {
-        echo '<div class="success-message">Personen blev slettet.</div>';
-    } else {
-        echo '<div class="error-message">Personen blev ikke fundet eller kunne ikke slettes.</div>';
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
+      $id = $_POST["person_id"];
+      $username = $_SESSION['username'];
+      deletePerson($username,(int)$id);
+      header("Refresh:0");
+      echo "Personen er blevet slettet";
     }
-    */
-}
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update"])) {
-    $id = $_POST["person_id"];
-    $username = $_SESSION['username'];
-    
-    // Prepare the data to update
-    $updateData = [
-        $fNavn = 'fornavn' => $_POST['fornavn'],
-        $eNavn= 'efternavn' => $_POST['efterNavn'],
-        $køn = 'køn' => $_POST['køn'],
-        $fDag = 'fDag' => $_POST['fDag'],
-        $fSted = 'fSted' => $_POST['fSted'],
-        $dDag = 'dDag' => $_POST['dDag'],
-        $dSted = 'dSted' => $_POST['dSted']
-    ];
-
-    updatePerson($id,$username,$fNavn,$eNavn,$fDag,$fSted,$køn,$dDag,$dSted);
 }
 ?>
 </body>
