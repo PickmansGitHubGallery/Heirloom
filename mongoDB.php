@@ -37,7 +37,7 @@ function opretBruger($username,$password,$email){
         'username' => $username,
         'password' => $password,
         'email' => $email,
-        'idCounter' => '0'
+        'idCounter' => 0
     ]);
 }
 function findBruger($username){
@@ -118,5 +118,11 @@ function deletePerson($username,$personId){
     $client = new MongoDB\Client('mongodb://localhost:27017');
     $collection = $client->heirloom->$username;
     $collection->deleteOne(['id' => $personId]);
+}
+function visAllePersoner($username){
+    $client = new MongoDB\Client('mongodb://localhost:27017');
+    $collection = $client->heirloom->$username;
+    $cursor = $collection->find();
+    return $cursor->toArray();
 }
 ?>
