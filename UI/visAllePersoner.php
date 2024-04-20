@@ -1,5 +1,6 @@
 <?php
 include '../Global/session.php';
+include '../Global/tjekAdgang.php';
 include '../Global/logout.php';
 include '../Global/header.php';
 include '../Global/navbar.php';

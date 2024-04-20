@@ -6,6 +6,8 @@ include '../Global/footer.php';
 ?>
 <html>
 <body>
+<section class="opret-bruger">
+    <h1>Opret bruger</h1>
 <form action="../Logik/opretBrugerlogik.php" method="POST">
     <label for="username">Brugernavn</label>
     <input type="text" id="username" name="username" required>
@@ -15,6 +17,6 @@ include '../Global/footer.php';
     <input type="email" id="email" name="email" required>
     <input type="submit" value="Opret bruger">
 </form>
-
+</section>
 </body>
 </html>
