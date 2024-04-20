@@ -4,7 +4,13 @@ body {
   padding: 0;
   background-color: #f4f4f4;
 }
-
+.login{
+  
+  margin: 0 auto;
+  width: 50%;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -62,17 +68,13 @@ th {
   color: #fff;
 }
 
-.container {
+.navbar-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 24px;
+  align-items: right;
 }
 
 .nav-links {
@@ -148,15 +150,12 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
   background-color: #444;
 }
-.VelkomstSide {
+.velkomst-side {
   text-align: center;
 }
 
-.VelkomstSide .center-content {
+.velkomst-side velkomst-side-tekst {
   display: inline-block;
   text-align: center;
 }
-.fjernPerson {
-  text-align: center;
-  color: red;
-}
+

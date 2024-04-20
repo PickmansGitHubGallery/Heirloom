@@ -7,16 +7,16 @@ include '../Global/footer.php';
 
 <html>
 <body>
+  <section class="login">
+    <h1>Login</h1>
   <form action="../Logik/logindLogik.php" method="POST">
     <label for="uname">Brugernavn:</label>
     <input name="username" id="uname" type="text"></input>
-    <br><br>
     <label for="passw">Kodeord:</label>
     <input name="password" id="passw" type="password"></input>
-    <br><br>
     <input value="Login" type="submit"></input>
   </form>
-  <br>
+  </section>
 </body>
 
 </html>

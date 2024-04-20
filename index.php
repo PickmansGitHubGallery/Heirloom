@@ -24,7 +24,7 @@ if(isset($_POST['logout'])) {
 <html>
 <body>
 <nav class="navbar">
-    <div class="container">
+    <section class="navbar-container">
         <ul class="nav-links">
             <li><a href="UI/logindSide.php">Login</a></li>
             <li><a href="UI/opretBrugerSide.php">Opret Bruger</a></li>
@@ -34,10 +34,10 @@ if(isset($_POST['logout'])) {
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="logout-form">
     <button type="submit" name="logout" class="logout-btn">Log Off</button>
   </form>
-    </div>
+    </section>
 </nav>
-<section class="VelkomstSide">
-  <div class="center-content">
+<section class="velkomst-side">
+  <article class="vekomst-side-teks">
     <p>Velkommen til Heirloom, <?php
     if (isset($_SESSION['username'])){
       echo $_SESSION['username'];
@@ -46,11 +46,11 @@ if(isset($_POST['logout'])) {
     } 
      ?></p>
     <img src="public/images/tree.jpg" alt="tree" width="750" height="750">
-  </div>
+  </article>
 </section>
 </body>
 <footer>
-  <section class="footerSection">
+  <section class="footer">
     <p>&copy; <?php echo date("Y"); ?> Your Website. All rights reserved.</p>
   </section>
 </footer>

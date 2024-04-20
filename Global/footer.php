@@ -1,6 +1,6 @@
 <html>
 <footer>
-  <section class="footerSection">
+  <section class="footer">
     <p>&copy; <?php echo date("Y"); ?> Your Website. All rights reserved.</p>
   </section>
 </footer>
