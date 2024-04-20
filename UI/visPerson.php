@@ -11,13 +11,13 @@ include '../mongodb.php';
 
 <html>
 <body>
+    <section class="visPerson">
 <h1>Opdater Person information</h1>
-
 <form method="POST">Indtast Persons ID:</label>
     <input type="text" id="person_id" name="person_id">
     <input type="submit" value="Find">
 </form>
-
+</section>
 
 <?php
 
@@ -30,6 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     foreach($personRetur as $data) {
 ?>
+<section class="opdater-person">
+    <h2>Opdater Person</h2>
+    <p>Indtast de nye oplysninger:</p>
 <form method="POST">
     <input type="hidden" name="person_id" value="<?php echo $data['id']; ?>">
 
@@ -54,9 +57,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="dSted">Dødssted:</label>
         <input type="text" id="dSted" name="dSted" value="<?php echo $data['dSted']; ?>">
 
+        <label for="mor">Mor:</label>
+        <input type="text" id="mor" name="mor" value="<?php echo $data['mor']; ?>">
+
+        <label for="far">Far:</label>
+        <input type="text" id="far" name="far" value="<?php echo $data['far']; ?>">
+
         <input type="submit" name="update" value="Update">
         <input type="submit" name="delete" value="Delete">
 </form>
+</section>
 <?php
     }
 }
@@ -88,11 +98,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update"])) {
         $fDag = 'fDag' => $_POST['fDag'],
         $fSted = 'fSted' => $_POST['fSted'],
         $dDag = 'dDag' => $_POST['dDag'],
-        $dSted = 'dSted' => $_POST['dSted']
+        $dSted = 'dSted' => $_POST['dSted'],
+        $mor = 'mor' => $_POST['mor'],
+        $far = 'far' => $_POST['far']
     ];
 
-    updatePerson($id,$username,$fNavn,$eNavn,$fDag,$fSted,$køn,$dDag,$dSted);
+    updatePerson($id,$username,$fNavn,$eNavn,$fDag,$fSted,$køn,$dDag,$dSted,$mor,$far);
 }
 ?>
+
 </body>
 </html>

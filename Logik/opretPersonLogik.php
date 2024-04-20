@@ -17,10 +17,12 @@ $ddag = changeDateFormatToDMY($_POST['dDag']);
 
 $username = $_SESSION['username'];
 $personId = findIdCounter($username);
-
+$mor = "Ikke Angivet";
+$far = "Ikke Angivet";
 
 //Her opretter jeg en ny person og indsætter den i databasen.
-$person = new Person ($personId,$_POST['fornavn'], $_POST['efterNavn'], $fdag,$_POST['fSted'], $_POST['køn'], $ddag, $_POST['dSted']);
+$person = new Person ($personId,$_POST['fornavn'], $_POST['efterNavn'], $fdag,$_POST['fSted'], $_POST['køn'], $ddag, $_POST['dSted'],$mor,$far);
+
 
 
 insertOneToDatabase($person);

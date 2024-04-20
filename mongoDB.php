@@ -18,6 +18,8 @@ $fDag = $person->getFDag();
 $fSted = $person->getfSted();
 $dDag = $person->getDDag();
 $dSted = $person->getdSted();
+$mor = $person->getMor();
+$far = $person->getFar();
 
 $collection->insertOne([
     'id' => $id,
@@ -27,8 +29,11 @@ $collection->insertOne([
     'fDag' => $fDag,
     'fSted' => $fSted,
     'dDag' => $dDag,
-    'dSted' => $dSted
+    'dSted' => $dSted,
+    'mor' => $mor,
+    'far' => $far
 ]);
+
 }
 function opretBruger($username,$password,$email){
     $client = new MongoDB\Client('mongodb://localhost:27017');
@@ -100,7 +105,7 @@ function findPersonMedId($username, $personId){
 }
 
 
-function updatePerson($personId,$username,$fornavn,$efternavn,$fDag,$fSted,$køn,$dDag,$dSted){
+function updatePerson($personId,$username,$fornavn,$efternavn,$fDag,$fSted,$køn,$dDag,$dSted,$mor,$far){
     $client = new MongoDB\Client('mongodb://localhost:27017');
     $collection = $client->heirloom->$username;
     $collection->updateOne(
@@ -111,7 +116,9 @@ function updatePerson($personId,$username,$fornavn,$efternavn,$fDag,$fSted,$køn
         ['$set' => ['fSted' => $fSted]],
         ['$set' => ['køn' => $køn]],
         ['$set' => ['dDag' => $dDag]],
-        ['$set' => ['dSted' => $dSted]]
+        ['$set' => ['dSted' => $dSted]],
+        ['$set' => ['mor' => $mor]],
+        ['$set' => ['far' => $far]]
     );
 }
 function deletePerson($username,$personId){
@@ -125,4 +132,5 @@ function visAllePersoner($username){
     $cursor = $collection->find();
     return $cursor->toArray();
 }
+
 ?>

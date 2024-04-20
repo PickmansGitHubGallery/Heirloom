@@ -4,11 +4,11 @@ body {
   padding: 0;
   background-color: #f4f4f4;
 }
-.login, .opret-bruger {
+.login, .opret-bruger,.opretPersonForm, .visPerson,.opdater-person {
   text-align: center;
   margin: 0 auto;
   width: 50%;
-  padding: 10px;
+  padding: 10px,0px;
   background-color: #f0f0f0;
   input[type=text], input[type=password], input[type=email] {
     width: 100%;
@@ -17,6 +17,11 @@ body {
     box-sizing: border-box;
     font-size: 100%;
   }
+}
+.opdater-person {
+  padding-top: 20px;
+  margin-top: 25px;
+  margin-bottom: 75px;
 }
 form {
   max-width: 600px;
@@ -34,7 +39,11 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
   background-color: #444;
 }
-
+.alle-personer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 .container {
   max-width: 800px;
   margin: 0 auto;
