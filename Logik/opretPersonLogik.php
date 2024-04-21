@@ -19,9 +19,11 @@ $username = $_SESSION['username'];
 $personId = findIdCounter($username);
 $mor = "Ikke Angivet";
 $far = "Ikke Angivet";
+$morId = 0;
+$farId = 0;
 
 //Her opretter jeg en ny person og indsætter den i databasen.
-$person = new Person ($personId,$_POST['fornavn'], $_POST['efterNavn'], $fdag,$_POST['fSted'], $_POST['køn'], $ddag, $_POST['dSted'],$mor,$far);
+$person = new Person ($personId,$_POST['fornavn'], $_POST['efterNavn'], $fdag,$_POST['fSted'], $_POST['køn'], $ddag, $_POST['dSted'],$mor,$far,$morId,$farId);
 
 
 

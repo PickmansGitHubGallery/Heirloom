@@ -19,7 +19,9 @@ $fSted = $person->getfSted();
 $dDag = $person->getDDag();
 $dSted = $person->getdSted();
 $mor = $person->getMor();
+$morId = $person->getMorId();
 $far = $person->getFar();
+$farId = $person->getFarId();
 
 $collection->insertOne([
     'id' => $id,
@@ -31,7 +33,9 @@ $collection->insertOne([
     'dDag' => $dDag,
     'dSted' => $dSted,
     'mor' => $mor,
-    'far' => $far
+    'morId' => $morId,
+    'far' => $far,
+    'farId' => $farId
 ]);
 
 }

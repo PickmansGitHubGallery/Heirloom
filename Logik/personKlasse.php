@@ -13,7 +13,9 @@ class Person{
   private $dDag;
   private $dSted;
   private $mor;
+  private $morId;
   private $far;
+  private $farId;
 
   // Constructor
   function __construct($id,$forNavn, $efterNavn, $fDag, $fSted, $køn, $dDag, $dSted,$mor,$far) {
@@ -70,6 +72,12 @@ class Person{
   function setFar($far) {
     $this->far = $far;
   }
+  function setMorId($morId) {
+    $this->morId = $morId;
+  }
+  function setFarId($farId) {
+    $this->farId = $farId;
+  }
   // Getters
   function getId() {
     return $this->id;
@@ -105,6 +113,12 @@ class Person{
   }
   function getFar() {
     return $this->far;
+  }
+  function getMorId() {
+    return $this->morId;
+  }
+  function getFarId() {
+    return $this->farId;
   }
 }
 ?>
