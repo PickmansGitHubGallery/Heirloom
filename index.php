@@ -1,5 +1,6 @@
 <?php
 include 'Global/session.php';
+include 'Logik/getApi.php';
 if(isset($_POST['logout'])) {
   // Unset all session variables
   session_unset();
@@ -31,6 +32,7 @@ if(isset($_POST['logout'])) {
             <li><a href="UI/opretPersonSide.php">Opret Person</a></li>
             <li><a href="UI/visPerson.php">Vis Person</a></li>
             <li><a href="UI/visAllePersoner.php">Vis Alle Personer</a></li>
+            <li><a href="UI/goodAdvice.php">Gode Råd</a></li>
         </ul>
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="logout-form">
     <button type="submit" name="logout" class="logout-btn">Log ud</button>
@@ -38,7 +40,7 @@ if(isset($_POST['logout'])) {
     </section>
 </nav>
 <section class="velkomst-side">
-  <article class="vekomst-side-teks">
+  <article class="vekomst-side-tekst">
     <p>Velkommen til Heirloom, <?php
     if (isset($_SESSION['username'])){
       echo $_SESSION['username'];
@@ -52,7 +54,7 @@ if(isset($_POST['logout'])) {
 </body>
 <footer>
   <section class="footer">
-    <p>&copy; <?php echo date("Y"); ?> Your Website. All rights reserved.</p>
+    <p>&copy; <?php echo date("Y"); ?> Heirloom. All rights reserved.</p>
   </section>
 </footer>
 </html>

@@ -35,7 +35,10 @@ form input[type="submit"] {
   border: none;
   cursor: pointer;
 }
-
+.advice {
+  color: red;
+  font-size: 80%;
+}
 form input[type="submit"]:hover {
   background-color: #444;
 }
@@ -141,8 +144,27 @@ footer {
   text-align: center;
 }
 
-.velkomst-side velkomst-side-tekst {
+.velkomst-side-tekst {
+  font-size: 100px;
   display: inline-block;
   text-align: center;
 }
+.goodAdvice {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
 
+.goodAdvice h4 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.goodAdvice p {
+  color: #666;
+  font-size: 16px;
+}

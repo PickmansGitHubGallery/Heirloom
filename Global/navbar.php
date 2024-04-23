@@ -5,6 +5,7 @@
             <li><a href="../index.php">Forside</a></li>
             <li><a href="../UI/opretPersonSide.php">Opret Person</a></li>
             <li><a href="../UI/visAllePersoner.php">Vis Alle Personer</a></li>
+            <li><a href="../UI/goodAdvice.php">Gode Råd</a></li>
         </ul>
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="logout-form">
         <button type="submit" name="logout" class="logout-btn">Log ud</button>
