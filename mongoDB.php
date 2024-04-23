@@ -109,21 +109,28 @@ function findPersonMedId($username, $personId){
 }
 
 
-function updatePerson($personId,$username,$fornavn,$efternavn,$fDag,$fSted,$køn,$dDag,$dSted,$mor,$far){
+function updatePerson($person){
+    $username = $_SESSION['username'];
     $client = new MongoDB\Client('mongodb://localhost:27017');
     $collection = $client->heirloom->$username;
-    $collection->updateOne(
-        ['id' => $personId],
-        ['$set' => ['fornavn' => $fornavn]],
-        ['$set' => ['efternavn' => $efternavn]],
-        ['$set' => ['fDag' => $fDag]],
-        ['$set' => ['fSted' => $fSted]],
-        ['$set' => ['køn' => $køn]],
-        ['$set' => ['dDag' => $dDag]],
-        ['$set' => ['dSted' => $dSted]],
-        ['$set' => ['mor' => $mor]],
-        ['$set' => ['far' => $far]]
-    );
+    $id = $person->getId();
+    $filter = ['id' => (int)$id];
+    $update = [
+        '$set' => [
+            'fornavn' => $person->getForNavn(),
+            'efternavn' => $person->getEfterNavn(),
+            'køn' => $person->getKøn(),
+            'fDag' => $person->getFDag(),
+            'fSted' => $person->getfSted(),
+            'dDag' => $person->getDDag(),
+            'dSted' => $person->getdSted(),
+            'mor' => $person->getMor(),
+            'morId' => $person->getMorId(),
+            'far' => $person->getFar(),
+            'farId' => $person->getFarId()
+        ]
+    ];
+    $collection->updateOne($filter, $update);
 }
 function deletePerson($username,$personId){
     $client = new MongoDB\Client('mongodb://localhost:27017');

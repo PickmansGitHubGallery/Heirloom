@@ -34,6 +34,7 @@ $allePersoner = visAllePersoner($navn);
         <th>Far</th>
         <th>Far ID</th>
         <th>Slet</th>
+        <th>Rediger</th>
     </tr>
     <?php foreach ($allePersoner as $person) : ?>
         <?php $personlink = "visPersonProfil.php?id=" . $person['id']; ?>
@@ -56,9 +57,13 @@ $allePersoner = visAllePersoner($navn);
             <td> <?php echo "<a href=$farlink>" . $person['farId'] . "</a>"; ?></td>
             <td>   <form method="post">
                     <input type="hidden" name="person_id" value="<?php echo $person['id']; ?>">
-                    <input type="submit" name="delete" value="Delete">
+                    <input type="submit" name="delete" value="slet person">
                 </form>
             </td>
+            <td>  <form method="post" action="redigerPerson.php">
+                    <input type="hidden" name="person_id" value="<?php echo $person['id']; ?>">
+                    <input type="submit" name="edit" value="opdater person">
+                </form>
         </tr>
     <?php endforeach; ?>
     
