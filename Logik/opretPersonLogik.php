@@ -12,8 +12,8 @@ function changeDateFormatToDMY($date) {
   return $date;
 }
 //Her ændrer jeg datoen fra Y-m-d til d-m-Y
-$fdag = changeDateFormatToDMY($_POST['fDag']);
-$ddag = changeDateFormatToDMY($_POST['dDag']);
+//$fdag = changeDateFormatToDMY($_POST['fDag']);
+//$ddag = changeDateFormatToDMY($_POST['dDag']);
 
 $username = $_SESSION['username'];
 $personId = findIdCounter($username);
@@ -21,9 +21,16 @@ $mor = "Ikke Angivet";
 $far = "Ikke Angivet";
 $morId = 0;
 $farId = 0;
+$ddag = null;
+if (!isset($_POST['dDag'])){
+  $ddag = "Ikke Angivet";
+}
+if (!isset($_POST['fDag'])){
+  $fdag = "Ikke Angivet";
+}
 
 //Her opretter jeg en ny person og indsætter den i databasen.
-$person = new Person ($personId,$_POST['fornavn'], $_POST['efterNavn'], $fdag,$_POST['fSted'], $_POST['køn'], $ddag, $_POST['dSted'],$mor,$far,$morId,$farId);
+$person = new Person ($personId,$_POST['fornavn'], $_POST['efterNavn'], $_POST['fDag'],$_POST['fSted'], $_POST['køn'], $ddag, $_POST['dSted'],$mor,$far,$morId,$farId);
 
 
 
