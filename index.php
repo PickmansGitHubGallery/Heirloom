@@ -13,6 +13,7 @@ if(isset($_POST['logout'])) {
   exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,29 +26,37 @@ if(isset($_POST['logout'])) {
 <html>
 <body>
 <nav class="navbar">
-    <section class="navbar-container">
+    <section class="navbar-menu">
         <ul class="nav-links">
+          <?php if(!isset($_SESSION['username'])) { ?>
             <li><a href="UI/logindSide.php">Login</a></li>
-            <li><a href="UI/opretBrugerSide.php">Opret Bruger</a></li>
+          <?php } ?>
+            <?php if(!isset($_SESSION['username'])) { ?>
+                <li><a href="UI/opretBrugerSide.php">Opret Bruger</a></li>
+            <?php } ?>
             <li><a href="UI/opretPersonSide.php">Opret Person</a></li>
-            <li><a href="UI/visPerson.php">Vis Person</a></li>
             <li><a href="UI/visAllePersoner.php">Vis Alle Personer</a></li>
             <li><a href="UI/goodAdvice.php">Gode Råd</a></li>
+            <?php if(isset($_SESSION['username'])) { ?>
+            <li>
+                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="logout-form">
+                    <button type="submit" name="logout" class="logout-btn">Log ud</button>
+                </form>
+            </li>
+            <?php } ?>
         </ul>
-        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="logout-form">
-    <button type="submit" name="logout" class="logout-btn">Log ud</button>
-  </form>
     </section>
 </nav>
+
 <section class="velkomst-side">
   <article class="vekomst-side-tekst">
-    <p>Velkommen til Heirloom, <?php
+    <p><b>Velkommen til Heirloom, <?php
     if (isset($_SESSION['username'])){
       echo $_SESSION['username'];
     }else{
       echo 'Gæst';
     } 
-     ?></p>
+     ?></b></p>
     <img src="public/images/tree.jpg" alt="tree" width="750" height="750">
   </article>
 </section>

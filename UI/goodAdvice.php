@@ -6,7 +6,7 @@ include '../Global/footer.php';
 include '../Logik/getApi.php';
 ?>
 <body>
-    <section class="goodAdvice">
+    <section class="good-advice">
         <h4>Gode Råd</h4>
         <p> <?php echo hentApi()?></p> 
     </section>

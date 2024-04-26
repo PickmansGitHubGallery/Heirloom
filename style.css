@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+ 
 }
 .login, .opret-bruger,.opretPersonForm, .visPerson,.opdater-person {
   text-align: center;
@@ -10,6 +11,7 @@ body {
   width: 50%;
   padding: 10px,0px;
   background-color: #f0f0f0;
+  
   input[type=text], input[type=password], input[type=email] {
     width: 100%;
     padding: 12px 20px;
@@ -17,11 +19,6 @@ body {
     box-sizing: border-box;
     font-size: 100%;
   }
-}
-.opdater-person {
-  padding-top: 20px;
-  margin-top: 25px;
-  margin-bottom: 75px;
 }
 form {
   max-width: 600px;
@@ -35,23 +32,11 @@ form input[type="submit"] {
   border: none;
   cursor: pointer;
 }
-.advice {
-  color: red;
-  font-size: 80%;
-}
+
 form input[type="submit"]:hover {
   background-color: #444;
 }
-.alle-personer {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
+
 .visPerson {
   max-width: 800px;
   margin: 20px auto;
@@ -67,6 +52,7 @@ h1 {
 label {
   font-weight: bold;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -85,15 +71,16 @@ th {
 .navbar {
   background-color: #333;
   color: #fff;
+  width: 100%;
 }
 
-.navbar-container {
+.navbar-menu {
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
-  align-items: right;
+  align-items: center;
 }
 
 .nav-links {
@@ -120,13 +107,29 @@ th {
 .nav-links li a:hover {
   color: #ddd;
 }
+.logout-form{
+  text-align: left;
+}
+.logout-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
 footer {
   background-color: #333;
   color: #fff;
   padding: 5px 0;
   text-align: center;
   width: 100%;
-  position: fixed;
+  position: absolute; 
   bottom: 0;
 }
 #opretPersonFormOverskrift {
@@ -149,22 +152,8 @@ footer {
   display: inline-block;
   text-align: center;
 }
-.goodAdvice {
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.goodAdvice h4 {
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.goodAdvice p {
-  color: #666;
-  font-size: 16px;
+.good-advice {
+  font-size: 20px;
+  display: inline-block;
+  text-align: center;
 }
