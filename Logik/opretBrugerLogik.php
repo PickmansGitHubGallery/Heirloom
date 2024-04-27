@@ -13,10 +13,13 @@ $findesBruger = findBruger($username);
 if ($username == !$findesBruger) {
   $hashPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
     opretBruger($username, $hashPassword, $_POST['email']);
-    echo "Brugeren er nu oprettet";
+    echo "<p class='opret-bruger-besked'>Brugeren er nu oprettet</p>";
+    echo "<p class='opret-bruger-besked'>Du bliver ført til Log ind siden.</p>";
     header("refresh:3;url=/heirloom/UI/logIndSide.php");
 } else {
-    echo "Brugeren findes allerede";
+    echo "<p class='opret-bruger-besked'>Brugeren findes allerede.</p>";
+    echo "<p id='sletPersonInfo'>Personen bliver slettet... Vent venligst</p>";
+    echo "<p class='opret-bruger-besked'>Du bliver ført tilbage til opret Bruger siden.</p>";
     header("refresh:3;url=/heirloom/UI/opretBrugerSide.php");
 
 }

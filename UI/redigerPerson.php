@@ -18,7 +18,7 @@ if(isset($_POST['person_id'])) {
     $personInfo = findPersonMedId($username,(int)$id);
     
     if (empty($personInfo)) {
-      echo '<div class="fejlPerson">Personen blev ikke fundet.</div>';
+      echo "Personen blev ikke fundet";
     } else
     {
     foreach($personInfo as $data) {
@@ -42,8 +42,37 @@ if(isset($_POST['person_id'])) {
         <label for="fDag">Fødselsdag:</label>
         <input type="text" id="fDag" name="fDag" placeholder="dd/mm/åååå" value="<?php echo $data['fDag']; ?>">
 
-        <label for="fSted">Fødselssted:</label>
-        <input type="text" id="fSted" name="fSted" value="<?php echo $data['fSted']; ?>">
+        <label for="fSted">Fødselssted:
+        <select id="fSted" name="fSted"></select>
+        </label>
+        <div class='script-div'>
+        <script>
+        fetch('../public/byer.txt')
+        .then(response => response.text())
+        .then(data => {
+        // Split the text into an array of options
+        const options = data.split('\n');
+
+        // Get the select element
+        const select = document.getElementById('fSted');
+
+        // Populate the select element with options
+        options.forEach(option => {
+          const optionElement = document.createElement('option');
+          optionElement.value = select.value;
+          optionElement.value = option.trim(); // Trim whitespace
+          optionElement.textContent = option.trim(); // Trim whitespace
+          select.appendChild(optionElement);
+        });
+
+        // Set the existing value if it exists
+        const existingValue = "<?php echo $data['fSted']; ?>";
+        if (existingValue) {
+          select.value = existingValue;
+        }
+        })
+        .catch(error => console.error('Kan ikke finde fødested', error));</script>
+        </div>
         
         <label for="dDag">Dødsdag:</label>
         <input type="text" id="dDag" name="dDag" placeholder="dd/mm/åååå" value="<?php echo $data['dDag']; ?>" >

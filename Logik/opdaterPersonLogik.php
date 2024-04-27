@@ -26,5 +26,5 @@ $person->setFarId($_POST['farId']);
 
 updatePerson($person);
 
-echo "Personen er nu opdateret.";
+echo "<p id='person-opdateret-besked'>Personen er nu opdateret.</p>";
 ?>

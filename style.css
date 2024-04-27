@@ -3,13 +3,13 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
- 
 }
 .login, .opret-bruger,.opretPersonForm, .visPerson,.opdater-person {
   text-align: center;
   margin: 0 auto;
   width: 50%;
   padding: 10px,0px;
+  padding-bottom: 75px;
   background-color: #f0f0f0;
   
   input[type=text], input[type=password], input[type=email] {
@@ -36,13 +36,45 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
   background-color: #444;
 }
+label[for="fSted"] {
+  font-weight: bold;
+  display: block; /* Ensures the label and select are on separate lines */
+  margin-bottom: 8px; /* Adjust spacing between label and select */
+}
 
+/* Adjust select styling */
+#fSted {
+  width: 100%; /* Ensure the select fills its container */
+  padding: 8px; /* Adjust padding as needed */
+  border: 1px solid rgb(44, 44, 44); /* Add border for visual separation */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  font-size: 100%; /* Match font size with other form elements */
+  background: white;
+}
+.script-div{
+  margin-top: 20px;
+}
+.script-div script{
+  font-size: 100%;
+}
 .visPerson {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
   background-color: #f0f0f0;
   border-radius: 5px;
+}
+#sletPersonInfo,.person-opdateret-besked, #opret-bruger-besked {
+  margin-top: 20px;
+  font-size: large;
+  text-align: center;
+  color: red;
+}
+.person-opdateret-besked, #opret-bruger-besked{
+  margin-top: 20px;
+  font-size: large;
+  text-align: center;
+  color: green;
 }
 
 h1 {
@@ -126,10 +158,9 @@ th {
 footer {
   background-color: #333;
   color: #fff;
-  padding: 5px 0;
   text-align: center;
   width: 100%;
-  position: absolute; 
+  position: fixed; 
   bottom: 0;
 }
 #opretPersonFormOverskrift {
@@ -156,4 +187,23 @@ footer {
   font-size: 20px;
   display: inline-block;
   text-align: center;
+}
+/* On screens that are 768px  wide or less, the background color is blue */
+@media screen and (max-width: 768px ) {
+  body {
+    
+  }
+  .hide_text_tablet {
+    display: none;
+  }
+}
+
+/* On screens that are 480px wide or less, the background color is olive */
+@media screen and (max-width: 480px) {
+  body {
+  
+  }
+  .hide_text_mobile {
+    display: none;
+  }
 }
