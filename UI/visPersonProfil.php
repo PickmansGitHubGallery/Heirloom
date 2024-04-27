@@ -12,10 +12,10 @@ include '../mongoDB.php';
     <body>
         <section class="visPerson">
   <?php  
-// Check if ID parameter exists in the URL
+// tjekker om der er en id i url'en
 if(isset($_GET['id'])) {
     $id = $_GET['id'];
-    // Retrieve person's information based on ID
+    // henter persone informationen fra databasen via Id'et.
     $username = $_SESSION['username'];
     $personInfo = findPersonMedId($username,(int)$id);
     

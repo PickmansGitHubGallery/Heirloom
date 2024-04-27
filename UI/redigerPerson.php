@@ -50,22 +50,22 @@ if(isset($_POST['person_id'])) {
         fetch('../public/byer.txt')
         .then(response => response.text())
         .then(data => {
-        // Split the text into an array of options
+        // Del teksten op i et array af muligheder
         const options = data.split('\n');
 
-        // Get the select element
+        // sætter select elementet
         const select = document.getElementById('fSted');
 
-        // Populate the select element with options
+        // sætter select elementet med muligheder
         options.forEach(option => {
           const optionElement = document.createElement('option');
           optionElement.value = select.value;
-          optionElement.value = option.trim(); // Trim whitespace
-          optionElement.textContent = option.trim(); // Trim whitespace
-          select.appendChild(optionElement);
+          optionElement.value = option.trim(); // fjen whitespace
+          optionElement.textContent = option.trim(); // fjern whitespace
+          select.appendChild(optionElement); // tilføj mulighederne til select elementet
         });
 
-        // Set the existing value if it exists
+        // hvis der er en værdi i feltet, så sætter den den værdi
         const existingValue = "<?php echo $data['fSted']; ?>";
         if (existingValue) {
           select.value = existingValue;
@@ -103,8 +103,8 @@ if(isset($_POST['person_id'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update"])) {
     $id = $_POST["person_id"];
     $username = $_SESSION['username'];
-    echo "TEST";
-    // Prepare the data to update
+   
+    // opdatere personens information
     $updateData = [
         $fNavn = 'fornavn' => $_POST['fornavn'],
         $eNavn= 'efternavn' => $_POST['efterNavn'],

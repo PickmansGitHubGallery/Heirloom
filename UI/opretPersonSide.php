@@ -34,18 +34,18 @@ include '../Global/footer.php';
         fetch('../public/byer.txt')
         .then(response => response.text())
         .then(data => {
-        // Split the text into an array of options
+        // Del teksten op i et array af muligheder
         const options = data.split('\n');
 
-        // Get the select element
+        // sætter select elementet
         const select = document.getElementById('fSted');
 
-        // Populate the select element with options
+        // sætter select elementet med muligheder
         options.forEach(option => {
           const optionElement = document.createElement('option');
-          optionElement.value = option.trim(); // Trim whitespace
-          optionElement.textContent = option.trim(); // Trim whitespace
-          select.appendChild(optionElement);
+          optionElement.value = option.trim(); // fjerner whitespace
+          optionElement.textContent = option.trim(); // fjerner whitespace
+          select.appendChild(optionElement); // tilføjer mulighed til select elementet
         });
       })
       .catch(error => console.error('Kan ikke finde fødested', error));

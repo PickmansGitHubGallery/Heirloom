@@ -10,7 +10,7 @@ include '../mongoDB.php';
 $navn = $_SESSION['username'];
 
 $allePersoner = visAllePersoner($navn);
-
+//Når der bliver trykke på slet person knappen, bliver personen slettet og siden bliver refreshed.
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
     $id = $_POST["person_id"];
     $username = $_SESSION['username'];
@@ -46,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
         <th class='hide_text_tablet'>Slet</th>
         <th class='hide_text_tablet'>Rediger</th>
     </tr>
+    <!-- Her vises alle personer i tabellen -->
     <?php foreach ($allePersoner as $person) : ?>
         <?php $personlink = "visPersonProfil.php?id=" . $person['id']; ?>
         <?php $morlink = "visPersonProfil.php?id=" . $person['morId']; ?>

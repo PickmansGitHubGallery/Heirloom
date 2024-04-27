@@ -28,6 +28,7 @@ if(isset($_POST['logout'])) {
 <nav class="navbar">
     <section class="navbar-menu">
         <ul class="nav-links">
+          <!-- hvis brugeren ikke er logget ind, vises login og opret bruger knappen -->
           <?php if(!isset($_SESSION['username'])) { ?>
             <li><a href="UI/logindSide.php">Login</a></li>
           <?php } ?>
@@ -37,6 +38,7 @@ if(isset($_POST['logout'])) {
             <li><a href="UI/opretPersonSide.php">Opret Person</a></li>
             <li><a href="UI/visAllePersoner.php">Vis Alle Personer</a></li>
             <li><a href="UI/goodAdvice.php">Gode Råd</a></li>
+            <!-- Hvis brugeren er logget ind, vises log ud knappen -->
             <?php if(isset($_SESSION['username'])) { ?>
             <li>
                 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="logout-form">
@@ -51,6 +53,7 @@ if(isset($_POST['logout'])) {
 <section class="velkomst-side">
   <article class="vekomst-side-tekst">
     <p><b>Velkommen til Heirloom, <?php
+    // Hvis brugeren er logget ind, vises brugerens brugernavn
     if (isset($_SESSION['username'])){
       echo $_SESSION['username'];
     }else{

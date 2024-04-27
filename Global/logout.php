@@ -1,13 +1,15 @@
 <?php
 if(isset($_POST['logout'])) {
-  // Unset all session variables
+  // Fjerner alle session variabler
   session_unset();
 
-  // Destroy the session
+  // Desturere sessionen og data som er gemt i sessionen
   session_destroy();
 
-  // Redirect the user to a login page or any other desired page
-  header("Location: ../index.php"); // Redirect to login page
+  // Fører brugeren til index siden
+  header("Location: ../index.php");
+
+  // Afslutter scriptet
   exit();
 }
 ?>

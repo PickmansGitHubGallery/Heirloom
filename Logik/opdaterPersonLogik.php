@@ -27,5 +27,7 @@ $person->setFarId($_POST['farId']);
 updatePerson($person);
 
 echo "<p id='person-opdateret-besked'>Personen er nu opdateret.</p>";
+echo "<p id='person-opdateret-besked'>Du bliver ført tilbage til Vis Alle Personer Siden</p>";
+header("refresh:3;url=/heirloom/UI/visAllePersoner.php");
 
 ?>

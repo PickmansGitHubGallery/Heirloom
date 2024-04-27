@@ -6,7 +6,7 @@
             <li><a href="../UI/opretPersonSide.php">Opret Person</a></li>
             <li><a href="../UI/visAllePersoner.php">Vis Alle Personer</a></li>
             <li><a href="../UI/goodAdvice.php">Gode Råd</a></li>
-    
+            <!-- Hvis brugeren er logget ind, vises log ud knappen -->
             <?php if(isset($_SESSION['username'])) { ?>
             <li>
                 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="logout-form">
