@@ -5,7 +5,7 @@ include '../mongodb.php';
 include '../global/header.php';
 include '../global/navbar.php';
 include '../global/footer.php';
-header("refresh:5;url=/heirloom/index.php");
+header("refresh:5;url=/heirloom/UI/visAllePersoner.php");
 
 function changeDateFormatToDMY($date) {
   $date = date('d-m-Y', strtotime($date));
@@ -38,5 +38,5 @@ insertOneToDatabase($person);
 addToIdCounter($username);
 
 echo "Personen er nu oprettet i databasen.";
-echo "<br>";
+echo "<p id='person-opdateret-besked'>Du bliver nu ført til Vis Alle Personer.</p>";
 ?>

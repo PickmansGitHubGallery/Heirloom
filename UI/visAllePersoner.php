@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
         <tr>
             <?php $personId = $person['id']; ?>
             <td class='hide_text_tablet'><?php echo $person['id']; ?></td>
-            <td><?php echo "<a href=$personlink>" . $person['id'] . "</a>"; ?></td>
+            <td><?php echo "<a href=$personlink>" . $person['fornavn'] . "</a>"; ?></td>
             <td><?php echo $person['fornavn']; ?></td>
             <td><?php echo $person['efternavn']; ?></td>
             <td><?php echo $person['fDag']; ?></td>
