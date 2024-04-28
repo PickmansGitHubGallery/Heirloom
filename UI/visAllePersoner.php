@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
 </head>
 <body>
     
-<h2>Alle Personer</h2>
+<h2 id='alle-personer'>Alle Personer</h2>
 <table>
     <tr>
         <th class='hide_text_tablet'>ID</th>

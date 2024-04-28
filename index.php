@@ -38,6 +38,7 @@ if(isset($_POST['logout'])) {
             <li><a href="UI/opretPersonSide.php">Opret Person</a></li>
             <li><a href="UI/visAllePersoner.php">Vis Alle Personer</a></li>
             <li><a href="UI/goodAdvice.php">Gode Råd</a></li>
+            <li><a href="UI/om.php">Om Os</a></li>
             <!-- Hvis brugeren er logget ind, vises log ud knappen -->
             <?php if(isset($_SESSION['username'])) { ?>
             <li>
@@ -56,8 +57,12 @@ if(isset($_POST['logout'])) {
     // Hvis brugeren er logget ind, vises brugerens brugernavn
     if (isset($_SESSION['username'])){
       echo $_SESSION['username'];
+      echo '<br>';
+      echo 'God fornøjelse med at bruge Heirloom!';
     }else{
       echo 'Gæst';
+      echo '<br>';
+      echo 'Log ind for at få adgang til flere funktioner';
     } 
      ?></b></p>
     <img src="public/images/tree.jpg" alt="tree" width="750" height="750">

@@ -4,13 +4,15 @@ body {
   padding: 0;
   background-color: #f4f4f4;
 }
-.login, .opret-bruger,.opretPersonForm, .visPerson,.opdater-person {
+.login, .opret-bruger,.visPerson {
   text-align: center;
   margin: 0 auto;
   width: 50%;
   padding: 10px,0px;
+  margin-top: 50px;
+  padding-top: 20px;
   padding-bottom: 75px;
-  background-color: #f0f0f0;
+  background-color: #d6d6d6;
   
   input[type=text], input[type=password], input[type=email] {
     width: 100%;
@@ -38,17 +40,17 @@ form input[type="submit"]:hover {
 }
 label[for="fSted"] {
   font-weight: bold;
-  display: block; /* Ensures the label and select are on separate lines */
-  margin-bottom: 8px; /* Adjust spacing between label and select */
+  display: block; 
+  margin-bottom: 8px; 
 }
 
-/* Adjust select styling */
+
 #fSted {
-  width: 100%; /* Ensure the select fills its container */
-  padding: 8px; /* Adjust padding as needed */
-  border: 1px solid rgb(44, 44, 44); /* Add border for visual separation */
-  border-radius: 5px; /* Add border radius for rounded corners */
-  font-size: 100%; /* Match font size with other form elements */
+  width: 100%; 
+  padding: 8px; 
+  border: 1px solid rgb(44, 44, 44); 
+  border-radius: 5px; 
+  font-size: 100%;
   background: white;
 }
 .script-div{
@@ -104,6 +106,7 @@ th {
   background-color: #333;
   color: #fff;
   width: 100%;
+  align-self: center;
 }
 
 .navbar-menu {
@@ -112,7 +115,6 @@ th {
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .nav-links {
@@ -133,14 +135,11 @@ th {
 .nav-links li a {
   color: #fff;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; 
 }
 
 .nav-links li a:hover {
   color: #ddd;
-}
-.logout-form{
-  text-align: left;
 }
 .logout-btn {
   background-color: #dc3545;
@@ -167,13 +166,41 @@ footer {
   text-align: center;
 }
 .opretPersonForm {
-  margin: 20px auto;
-  padding: 20px;
-  width: 80%;
-  background-color: #f0f0f0;
+  text-align: center;
+  margin: 0 auto;
+  width: 50%;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #d6d6d6;
   
+  input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 100%;
+  }
 }
-
+.opdater-person{
+  text-align: center;
+  margin: 0 auto;
+  width: 50%;
+  margin-bottom: 80px;
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #d6d6d6;
+  
+  input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 100%;
+  }
+}
 .velkomst-side {
   text-align: center;
 }
@@ -187,6 +214,10 @@ footer {
   font-size: 20px;
   display: inline-block;
   text-align: center;
+}
+#alle-personer {
+  margin-top: 20px;
+  text-align: center;;
 }
 /* On screens that are 768px  wide or less, the background color is blue */
 @media screen and (max-width: 768px ) {

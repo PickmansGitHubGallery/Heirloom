@@ -1,4 +1,4 @@
-<html>
+
 <nav class="navbar">
     <section class="navbar-menu">
         <ul class="nav-links">
@@ -6,6 +6,7 @@
             <li><a href="../UI/opretPersonSide.php">Opret Person</a></li>
             <li><a href="../UI/visAllePersoner.php">Vis Alle Personer</a></li>
             <li><a href="../UI/goodAdvice.php">Gode Råd</a></li>
+            <li><a href="../UI/om.php">Om Os</a></li>
             <!-- Hvis brugeren er logget ind, vises log ud knappen -->
             <?php if(isset($_SESSION['username'])) { ?>
             <li>
@@ -17,4 +18,3 @@
         </ul>
     </section>
 </nav>
-</html>

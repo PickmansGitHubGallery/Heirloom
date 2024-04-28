@@ -6,4 +6,3 @@
     <link rel="stylesheet" href="../style.css">
     <title>Heirloom</title>
 </head>
-</html>
